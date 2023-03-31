@@ -1,0 +1,29 @@
+<div>
+  <app-filter [columns]="columns"></app-filter>
+</div>
+
+<dx-data-grid
+  [dataSource]="dataSource"
+  [showBorders]="true"
+>
+  <dxo-paging [pageSize]="25"></dxo-paging>
+  <dxi-column
+    *ngFor="let column of getVisibleColumns()"
+    [caption]="column.caption"
+    [dataField]="column.dataField"
+    [allowSorting]="column.sort"
+    [cellTemplate]="column.dataField === 'pictureUrl' ? 'picture' : null"
+  >
+    <ng-container *dxTemplate="let cellData of 'picture'">
+      <img [src]="cellData.value">
+    </ng-container>
+  </dxi-column>
+  <dxo-master-detail [enabled]="true" template="details"></dxo-master-detail>
+  <div *dxTemplate="let detail of 'details'">
+    <div class="master-detail-caption">
+      <p><strong>City: </strong>{{ detail.data.location.city }}</p>
+      <p><strong>Street: </strong>{{ detail.data.location.street.name }}</p>
+      <p><strong>Email: </strong>{{ detail.data.email }}</p>
+      </div>
+  </div>
+</dx-data-grid>

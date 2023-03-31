@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap';
+
+@import "~devextreme/dist/css/dx.common.css";
+@import "~devextreme/dist/css/dx.light.css";
+
+@import './app/components/users-table/users-table.component.scss';
+
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  min-height: calc(100vh - 160px);
+  flex: 1;
+}
