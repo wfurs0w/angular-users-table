@@ -1,6 +1,6 @@
 # Angular Users Table
 
-[DEMO](angular-users-table-9gvjsko60-wfurs0w.vercel.app)
+[DEMO](https://angular-users-table.vercel.app)
 
 This is a simple table view that allows you to see and manage data in a user-friendly way. You can sort(opened by right-clicking on the column heading), filter, and customize the columns to show only the information you need. 
 
